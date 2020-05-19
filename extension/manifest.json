@@ -1,0 +1,34 @@
+{
+	"manifest_version": 2,
+	"name": "Layers for PaintZ",
+	"version": "1.0",
+	"description": "Adds separate drawing layers to PaintZ.",
+	"icons": {
+	},
+	
+	"permissions": [
+		"https://paintz.app/",
+		"https://beta.paintz.app/"
+	],
+	
+	"content_scripts": [{
+		"matches": [
+			"https://paintz.app/",
+			"https://beta.paintz.app/"
+		],
+		"css": [
+			"styles/styles.css"
+		],
+		"js": [
+			"scripts/layer_element.js",
+			"scripts/layers_panel.js",
+			"scripts/layer_manager.js",
+			"scripts/main.js"
+		]
+	}],
+	
+	"web_accessible_resources": [
+		"images/icons/*.svg",
+		"images/icons/layer_add.svg#icon"
+	]
+}

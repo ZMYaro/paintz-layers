@@ -1,0 +1,84 @@
+#layers-panel {
+	position: fixed;
+	right: 0;
+	top: 128px;
+	/*bottom: 32px;*/
+	width: 30%;
+	max-width: 320px;
+	padding-bottom: 4px;
+	
+	z-index: 1; /* On top of the canvas, but still under dialogs. */
+}
+	#layers-panel .dialog-header,
+	#layers-panel .dialog-footer {
+		position: static;
+	}
+	/*#layers-panel .dialog-header {
+		position: fixed;
+		top: 0;
+	}
+	#layers-panel .dialog-footer {
+		position: fixed;
+		bottom: 0;
+	}*/
+
+#add-layer-button {
+	float: right;
+	margin-right: -8px;
+}
+
+#layers-list {
+	padding: 0;
+	margin: 0 -16px;
+	list-style-type: none;
+	
+	max-height: calc(100vh - 128px - 64px - 48px); /* Toolbar + toolbar padding; header; bottom bar + bottom bar padding */
+	overflow-y: auto;
+}
+
+.layer-button {
+	display: flex;
+}
+	.layer-button label {
+		position: relative; /* Bring them on top */
+		display: inline-block;
+	}
+		.layer-button label:first-child {
+			padding-left: 8px;
+		}
+		.layer-button label:last-child {
+			padding-right: 8px;
+		}
+		.layer-button label button {
+			margin-left: 0;
+			margin-right: 0;
+			padding: 0;
+			line-height: 0;
+			border-radius: 20px;
+		}
+			.layer-button label button img,
+			.layer-button label button [role="img"] {
+				width: 24px;
+				height: 24px;
+				margin: 8px;
+			}
+		
+	.layer-button .layer-name {
+		margin: 0;
+		width: 100%;
+		/*margin-left: calc(-16px - 48px);
+		margin-right: calc(-48px - 48px);*/
+		
+		color: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		text-transform: inherit;
+		padding-top: 14px;
+	}
+		
+	.layer-button .layer-visibility-toggle[aria-checked="false"] .layer-visibility-on-icon {
+		display: none;
+	}
+	.layer-button .layer-visibility-toggle[aria-checked="true"] .layer-visibility-off-icon {
+		display: none;
+	}
